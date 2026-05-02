@@ -9,7 +9,8 @@ interface SidebarProps {
 const adminNav = [
     { href: '/admin', icon: <LayoutDashboard size={18} />, label: 'Dashboard' },
     { href: '/admin/clients', icon: <Users size={18} />, label: 'Clients' },
-    { href: '/admin/picks', icon: <Target size={18} />, label: 'Manage Picks' },
+    { href: '/admin/picks', icon: <Target size={18} />, label: 'Traditional Picks' },
+    { href: '/admin/horse-racing', icon: <Target size={18} />, label: '🐎 Horse Racing' },
     { href: '/admin/salespeople', icon: <Briefcase size={18} />, label: 'Salespeople' },
     { href: '/admin/packages', icon: <Package size={18} />, label: 'Packages' },
     { href: '/admin/leads', icon: <Mail size={18} />, label: 'Leads' },
