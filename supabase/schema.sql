@@ -88,6 +88,45 @@ create table if not exists leads (
   created_at timestamptz default now()
 );
 
+-- 8. HORSE RACING PICKS (for learning agent)
+create table if not exists horse_racing_picks (
+  id uuid primary key default gen_random_uuid(),
+  race_date date not null,
+  track text not null,
+  race_number integer not null,
+  horse_name text not null,
+  program_number integer not null,
+  predicted_score integer,
+  predicted_rank integer,
+  actual_finish integer,
+  ml_odds text,
+  predicted_factors text[],
+  score_breakdown integer[],
+  result text check (result in ('win', 'placed', 'show', 'lost', 'pending')),
+  recorded_by uuid references auth.users(id),
+  created_at timestamptz default now(),
+  unique(race_date, track, race_number, program_number)
+);
+
+alter table horse_racing_picks enable row level security;
+
+create policy "Admins manage horse racing picks" on horse_racing_picks for all using (
+  exists (select 1 from profiles where id = auth.uid() and role = 'admin')
+);
+
+create policy "Auth users read horse picks" on horse_racing_picks for select using (
+  auth.role() = 'authenticated'
+);
+
+
+  id uuid primary key default gen_random_uuid(),
+  email text unique not null,
+  full_name text,
+  phone text,
+  source text default 'homepage',
+  created_at timestamptz default now()
+);
+
 -- ============================================
 -- ROW LEVEL SECURITY (RLS)
 -- ============================================
@@ -177,5 +216,8 @@ insert into packages (sport, name, description, price, duration_days) values
   ('baseball', '⚾ Monthly Baseball Membership', 'Full month of MLB picks', 450, 30),
   ('baseball', '⚾ Baseball Special', 'Weekly MLB special package', 175, 7),
   ('baseball', '⚾ 1 Week Baseball Membership', 'One full week of baseball picks', 125, 7),
-  ('baseball', '⚾ 1 High Octane Play', 'Single highest-confidence MLB play', 100, 1)
+  ('baseball', '⚾ 1 High Octane Play', 'Single highest-confidence MLB play', 100, 1),
+  ('horse_racing', '🐎 Daily Horse Racing', 'Full card analysis — Churchill, Keeneland, and all major tracks', 75, 1),
+  ('horse_racing', '🐎 Weekend Special', 'Friday through Sunday racing action', 175, 3),
+  ('horse_racing', '🐎 Full Month — Unlimited Racing', '30 days of unlimited racing picks from all major tracks', 450, 30)
 on conflict do nothing;

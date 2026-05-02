@@ -9,6 +9,7 @@ const navLinks = [
     { href: '/packages/football', label: 'Football' },
     { href: '/packages/basketball', label: 'Basketball' },
     { href: '/packages/baseball', label: 'Baseball' },
+    { href: '/horse-racing', label: 'Horse Racing' },
     { href: '/free-picks', label: 'Free Picks' },
     { href: '/todays-picks', label: "Today's Picks" },
     { href: '/contact', label: 'Contact' },
