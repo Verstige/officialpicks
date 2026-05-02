@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
             if (!profile?.email) continue
             try {
                 await resend.emails.send({
-                    from: `${process.env.FROM_NAME || "Harry's Picks"} <${process.env.FROM_EMAIL || 'picks@harryspicks.com'}>`,
+                    from: `${process.env.FROM_NAME || "Official Picks"} <${process.env.FROM_EMAIL || 'picks@harryspicks.com'}>`,
                     to: profile.email,
                     subject: `${emoji} New Pick Alert — ${pick.title}`,
                     html: `
@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
                   </div>
                 </div>
                 <div style="text-align:center;padding:20px 0;color:#4B5563;font-size:12px;">
-                  <p>Harry's Picks | For entertainment purposes only. 18+ only.</p>
+                  <p>Official Picks | For entertainment purposes only. 18+ only.</p>
                 </div>
               </div>
             </body>

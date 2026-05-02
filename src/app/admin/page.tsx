@@ -39,7 +39,7 @@ export default async function AdminDashboard() {
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
                         <div>
                             <h1>Admin Dashboard</h1>
-                            <p>Harry's Picks — Business Overview</p>
+                            <p>Official Picks — Business Overview</p>
                         </div>
                         <div style={{ display: 'flex', gap: '10px' }}>
                             <Link href="/admin/picks" className="btn btn-primary btn-sm">🎯 Post New Pick</Link>

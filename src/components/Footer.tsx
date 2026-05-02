@@ -9,12 +9,11 @@ export default function Footer() {
                     <div className="footer-brand">
                         <Link href="/" className="navbar-logo" style={{ display: 'inline-flex' }}>
                             <div className="logo-icon"><Trophy size={20} color="#070B14" /></div>
-                            <span>Harry's <span className="text-gradient">Picks</span></span>
+                            <span>Official <span className="text-gradient">Picks</span></span>
                         </Link>
                         <p>
-                            Uncle Harry delivers expert sports handicapping selections for all major events,
-                            including Football, Baseball, Basketball, and Horse Racing. Join thousands who trust
-                            Uncle Harry's picks for smarter, data-driven betting.
+                            Expert sports handicapping selections for NFL, NBA, MLB, College Sports, and Horse Racing.
+                            Join thousands who trust our analysis for smarter, data-driven betting.
                         </p>
                         <p style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
                             <Phone size={16} color="#F5A623" /> <a href="tel:9419145885" style={{ color: '#F5A623' }}>941-914-5885</a>
@@ -31,8 +30,8 @@ export default function Footer() {
                             <li><Link href="/packages/football">Football Picks</Link></li>
                             <li><Link href="/packages/basketball">Basketball Picks</Link></li>
                             <li><Link href="/packages/baseball">Baseball Picks</Link></li>
+                            <li><Link href="/horse-racing">Horse Racing</Link></li>
                             <li><Link href="/free-picks">Free SMS Picks</Link></li>
-                            <li><Link href="/todays-picks">Today's Picks</Link></li>
                         </ul>
                     </div>
 
@@ -66,7 +65,7 @@ export default function Footer() {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© {new Date().getFullYear()} Harry's Picks. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} Official Picks. All rights reserved.</p>
                     <p style={{ fontSize: '12px', color: '#4B5563', maxWidth: '560px', textAlign: 'right' }}>
                         For entertainment purposes only. Must be 18+ to purchase. All sales are final. No refunds.
                     </p>

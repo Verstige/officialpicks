@@ -82,7 +82,7 @@ export default function AdminEmailBroadcast() {
                             <div className="alert alert-info" style={{ marginTop: '16px' }}>
                                 <div>
                                     <strong>Powered by Resend.</strong> Emails sent from picks@harryspicks.com.
-                                    All emails include Harry's Picks branding header and unsubscribe footer.
+                                    All emails include Official Picks branding header and unsubscribe footer.
                                 </div>
                             </div>
                         </div>
@@ -94,8 +94,8 @@ export default function AdminEmailBroadcast() {
                                 {[
                                     {
                                         label: '🔥 Hot Picks Alert',
-                                        subject: "🔥 Uncle Harry's picks are on FIRE this week",
-                                        body: "Big plays going out to all members this weekend. Don't miss out — text PICK to 51501 or log in to your account to see today's selections. Call 941-914-5885 to upgrade your package.\n\n— Uncle Harry's Team"
+                                        subject: "🔥 Official Picks's picks are on FIRE this week",
+                                        body: "Big plays going out to all members this weekend. Don't miss out — text PICK to 51501 or log in to your account to see today's selections. Call 941-914-5885 to upgrade your package.\n\n— Official Picks's Team"
                                     },
                                     {
                                         label: '📦 New Package Available',
@@ -104,8 +104,8 @@ export default function AdminEmailBroadcast() {
                                     },
                                     {
                                         label: '🎉 Season Kickoff',
-                                        subject: "🏆 Season is here — Harry's Picks is ready!",
-                                        body: "The season is officially underway and Uncle Harry's team is LOCKED IN. Get your package now before the best plays go out this week. Call 941-914-5885 or Venmo @UncleharrysSports.\n\nLet's get winning! 🏆"
+                                        subject: "🏆 Season is here — Official Picks is ready!",
+                                        body: "The season is officially underway and Official Picks's team is LOCKED IN. Get your package now before the best plays go out this week. Call 941-914-5885 or Venmo @UncleharrysSports.\n\nLet's get winning! 🏆"
                                     },
                                 ].map((t, i) => (
                                     <button key={i} className="card" style={{ textAlign: 'left', cursor: 'pointer', background: 'var(--navy-card)' }}

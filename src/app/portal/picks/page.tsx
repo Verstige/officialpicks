@@ -56,7 +56,7 @@ export default async function PortalPicksPage() {
                         <div style={{ textAlign: 'center', padding: '80px 0', color: '#6B7280' }}>
                             <div style={{ fontSize: '48px', marginBottom: '16px' }}>🎯</div>
                             <h3 style={{ fontFamily: 'Outfit', fontWeight: 700, marginBottom: '8px', color: '#D1D5DB' }}>No picks yet</h3>
-                            <p>Picks will appear here when Uncle Harry releases them.</p>
+                            <p>Picks will appear here when they are released.</p>
                         </div>
                     )}
                 </div>

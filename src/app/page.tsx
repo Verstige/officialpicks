@@ -4,42 +4,41 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import toast from 'react-hot-toast'
-import { Trophy, Activity, Dribbble, Target, Flag, Package, CheckCircle2, Phone, Smartphone, Banknote, Microscope, Globe, BarChart, Mail } from 'lucide-react'
+import { Trophy, Activity, Dribbble, Target, Flag, Package, CheckCircle2, Phone, Smartphone, Banknote, Mail, TrendingUp, Shield, Zap } from 'lucide-react'
 
 const SPORTS = [
-  { icon: <Activity color="#F5A623" size={44} />, name: 'NFL Football', desc: '7–10 weekly plays, all levels' },
-  { icon: <Dribbble color="#F5A623" size={44} />, name: 'NBA Basketball', desc: 'Daily plays, college & pro' },
-  { icon: <Target color="#F5A623" size={44} />, name: 'MLB Baseball', desc: 'Daily picks all season long' },
-  { icon: <Flag color="#F5A623" size={44} />, name: 'Horse Racing', desc: 'Expert race day selections' },
-  { icon: <Activity color="#F5A623" size={44} />, name: 'College Football', desc: 'CFB picks & bowl specials' },
-  { icon: <Dribbble color="#F5A623" size={44} />, name: 'College Basketball', desc: 'NCAAB daily & tournament' },
+  { icon: <Activity color="#F5A623" size={44} />, name: 'NFL Football', desc: 'Pro & college picks year-round' },
+  { icon: <Dribbble color="#F5A623" size={44} />, name: 'NBA Basketball', desc: 'Daily pro & college plays' },
+  { icon: <Target color="#F5A623" size={44} />, name: 'MLB Baseball', desc: 'Full season coverage' },
+  { icon: <Flag color="#F5A623" size={44} />, name: 'Horse Racing', desc: 'Expert race-day selections' },
 ]
 
 const TESTIMONIALS = [
   {
     name: 'Martin Byrd',
-    text: "The site's clean design makes it a breeze to navigate, and the picks are consistently accurate. The free SMS text service is incredibly convenient. Harry's Picks has significantly improved my betting strategy and results.",
+    text: "The platform's clean design makes it a breeze to navigate, and the picks are consistently accurate. The free SMS text service is incredibly convenient. Official Picks has significantly improved my betting strategy and results.",
     rating: 5,
   },
   {
     name: 'James T.',
-    text: "Uncle Harry's track record is unmatched. I've been using the football package for two seasons and the ROI is real. Worth every penny.",
+    text: "The track record is unmatched. I've been using the football package for two seasons and the ROI is real. Worth every penny.",
     rating: 5,
   },
   {
     name: 'David R.',
-    text: "The Level 4 plays are my go-to. Consistent daily value and the SMS delivery means I never miss a pick. Highly recommend.",
+    text: "The premium plays are my go-to. Consistent daily value and the SMS delivery means I never miss a pick. Highly recommend.",
     rating: 5,
   },
 ]
 
 const TICKER_ITEMS = [
-  { team: 'Cubs', pick: '-1.5 RL WIN' },
-  { team: 'Chiefs', pick: '-3.5 ATS WIN' },
-  { team: 'Lakers', pick: 'O 225.5 WIN' },
-  { team: 'Yankees', pick: 'ML WIN' },
-  { team: 'Eagles', pick: 'U 47 WIN' },
-  { team: 'Celtics', pick: '-5.5 ATS WIN' },
+  { team: 'CD R3', pick: '#1 Arro Smash 15-1 ✅' },
+  { team: 'CD R4', pick: '#2 Bear River 30-1 ✅' },
+  { team: 'CD R6', pick: '#1 Brotha Keny 15-1 ✅' },
+  { team: 'CD R8', pick: '#5 Stop the Car 20-1 ✅' },
+  { team: 'CD R9', pick: '#5 Blackout Time 10-1 ✅' },
+  { team: 'CD R10', pick: '#6 Cornucopian 7-2 ✅' },
+  { team: 'CD R12', pick: '#1 Renegade 4-1 ✅' },
 ]
 
 export default function HomePage() {
@@ -58,7 +57,7 @@ export default function HomePage() {
         body: JSON.stringify({ email, full_name: name, source: 'homepage' }),
       })
       if (res.ok) {
-        toast.success('🎉 You\'re in! Check your email for your first free picks.')
+        toast.success("🎉 You're in! Check your email for free picks.")
         setEmail('')
         setName('')
       } else {
@@ -95,14 +94,17 @@ export default function HomePage() {
         <div className="hero-grid" />
         <div className="container">
           <div className="hero-content animate-fadeInUp">
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(245,166,35,0.1)', border: '1px solid rgba(245,166,35,0.2)', padding: '8px 16px', borderRadius: '9999px', marginBottom: '20px', fontSize: '14px', color: '#F5A623', fontWeight: 600 }}>
+              <Zap size={14} color="#F5A623" /> Now Live — Kentucky Derby Day Coverage
+            </div>
             <h1>
-              Uncle Harry's<br />
-              <span className="text-gradient">Winning Picks</span>
+              Expert Picks.<br />
+              <span className="text-gradient">Proven Results.</span>
             </h1>
             <p>
-              Expert sports handicapping for NFL, MLB, NBA, College Football, and Horse Racing.
-              Our picks are built on deep statistical analysis and insider connections.
-              <strong style={{ color: '#F5A623' }}> Don't bet blind — bet with Harry.</strong>
+              Advanced sports handicapping for NFL, NBA, MLB, College Sports, and Horse Racing.
+              Every pick backed by statistical analysis, market intelligence, and 15+ years of expertise.
+              <strong style={{ color: '#F5A623' }}> Don't bet blind — bet with the best.</strong>
             </p>
             <div className="hero-actions">
               <Link href="/register" className="btn btn-primary btn-lg" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -138,7 +140,7 @@ export default function HomePage() {
                 <div className="label">Experience</div>
               </div>
               <div className="hero-stat">
-                <div className="number">6 Sports</div>
+                <div className="number">4 Sports</div>
                 <div className="label">Covered Daily</div>
               </div>
               <div className="hero-stat">
@@ -150,7 +152,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS — Simple 3-step for 35+ */}
+      {/* HOW IT WORKS */}
       <section style={{ background: 'var(--navy-light)', borderTop: '1px solid var(--navy-border)', borderBottom: '1px solid var(--navy-border)', padding: '64px 0' }}>
         <div className="container">
           <div className="section-header">
@@ -160,7 +162,7 @@ export default function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '28px' }}>
             {[
-              { step: '1', icon: <Package size={32} color="#F5A623" />, title: 'Pick Your Package', desc: 'Browse our football, basketball, or baseball packages. Options start at just $20.' },
+              { step: '1', icon: <Package size={32} color="#F5A623" />, title: 'Pick Your Package', desc: 'Browse football, basketball, baseball, and horse racing packages. Options start at just $20.' },
               { step: '2', icon: <Banknote size={32} color="#F5A623" />, title: 'Pay via Venmo', desc: 'Send payment to @UncleharrysSports on Venmo, then text or call 941-914-5885 to confirm.' },
               { step: '3', icon: <Smartphone size={32} color="#F5A623" />, title: 'Receive Your Picks', desc: 'Get picks delivered directly to your phone via SMS and email — every single day.' },
             ].map(item => (
@@ -173,6 +175,25 @@ export default function HomePage() {
                 </div>
                 <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '21px', fontWeight: 700 }}>{item.title}</h3>
                 <p style={{ color: '#D1D5DB', fontSize: '17px', lineHeight: 1.7 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SPORTS */}
+      <section className="section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">What We Cover</span>
+            <h2>Expert Picks <span className="text-gradient">Every Sport</span></h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
+            {SPORTS.map(s => (
+              <div key={s.name} className="card" style={{ padding: '32px 24px', textAlign: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>{s.icon}</div>
+                <h3 style={{ fontFamily: 'Outfit', fontWeight: 700, fontSize: '19px', marginBottom: '8px' }}>{s.name}</h3>
+                <p style={{ color: '#9CA3AF', fontSize: '15px' }}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -230,143 +251,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE HARRY */}
+      {/* WHY CHOOSE US */}
       <section className="section">
         <div className="container">
           <div className="section-header">
             <span className="section-tag">Why Us</span>
-            <h2>Why Choose <span className="text-gradient">Harry?</span></h2>
+            <h2>Why Choose <span className="text-gradient">Official Picks?</span></h2>
             <p>
-              When you choose Harry Picks, you're not just getting picks — you're getting
-              a trusted advisor with 15+ years of winning results.
+              When you choose Official Picks, you're not just getting picks — you're getting a proven system built
+              on statistical analysis, market intelligence, and years of expertise.
             </p>
           </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
             {[
-              {
-                icon: <Microscope size={36} color="#F5A623" />,
-                title: 'Deep Statistical Analysis',
-                desc: 'Every pick is backed by advanced computer modeling, key team data, market trends, and critical statistics analyzed by our expert team.'
-              },
-              {
-                icon: <Target size={36} color="#F5A623" />,
-                title: 'Selective & Disciplined',
-                desc: 'We only release plays that meet strict criteria. Every game is hand-picked and must pass our rigorous qualification process before going out.'
-              },
-              {
-                icon: <Globe size={36} color="#F5A623" />,
-                title: 'Insider Network',
-                desc: 'Our network of sources continuously provides the most up-to-date information available — giving you an edge no public bettor has.'
-              },
-              {
-                icon: <Smartphone size={36} color="#F5A623" />,
-                title: 'SMS Delivery — Never Miss a Pick',
-                desc: 'Get plays delivered directly to your phone via SMS so you\'re always ready to act. Simple, fast, and reliable.'
-              },
-              {
-                icon: <BarChart size={36} color="#F5A623" />,
-                title: 'Packages for Every Budget',
-                desc: 'From $20/day Level 3 plays all the way up to full season memberships. Something for everyone no matter your budget.'
-              },
-              {
-                icon: <Trophy size={36} color="#F5A623" />,
-                title: 'Proven 15+ Year Track Record',
-                desc: 'Thousands of satisfied members across 15+ years. Join the community that trusts Uncle Harry for smarter, data-driven betting.'
-              },
-            ].map((item) => (
-              <div key={item.title} className="card" style={{ display: 'flex', flexDirection: 'column', gap: '14px', padding: '32px' }}>
-                <div>{item.icon}</div>
-                <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '20px', fontWeight: 700 }}>{item.title}</h3>
-                <p style={{ color: '#D1D5DB', fontSize: '17px', lineHeight: 1.75 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SPORTS WE COVER */}
-      <section className="section" style={{ background: 'var(--navy-light)', borderTop: '1px solid var(--navy-border)', borderBottom: '1px solid var(--navy-border)' }}>
-        <div className="container">
-          <div className="section-header">
-            <span className="section-tag">Sports Coverage</span>
-            <h2>6 Sports. <span className="text-gradient">Expert Picks Daily.</span></h2>
-            <p>No matter which sport you follow, Harry has you covered every single day of the season.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '18px' }}>
-            {SPORTS.map(sport => (
-              <div key={sport.name} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', textAlign: 'center', padding: '32px 20px', transition: 'all 0.2s', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div style={{ color: '#F5A623', marginBottom: '14px', background: 'rgba(245,166,35,0.1)', padding: '16px', borderRadius: '50%' }}>{sport.icon}</div>
-                <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '18px', marginBottom: '8px' }}>{sport.name}</div>
-                <div style={{ fontSize: '15px', color: '#9CA3AF', lineHeight: 1.6 }}>{sport.desc}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PACKAGES CTA */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-tag">Packages & Pricing</span>
-            <h2>Clear, <span className="text-gradient">Transparent Pricing</span></h2>
-            <p>No hidden fees. Choose the package that fits your game. Pay via Venmo — it's that simple.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px' }}>
-            {[
-              {
-                icon: <Activity size={32} color="#F5A623" />, sport: 'Football', href: '/packages/football',
-                highlight: 'Football Package 4 — $225',
-                desc: 'All Super Sonic, Mama Jama Locks, Level 4 and Special plays through Monday.',
-                plays: ['Super Sonic Play', 'Level 4 Plays', 'Level 3 Daily', 'Mama Jama Locks']
-              },
-              {
-                icon: <Dribbble size={32} color="#F5A623" />, sport: 'Basketball', href: '/packages/basketball',
-                highlight: 'NCAAB Level 4 Plays — $40/day',
-                desc: 'Daily plays for College Basketball, rated to be very good plays each game.',
-                plays: ['NCAAB Super Sonic', 'Level 4 Daily', 'Saturday 4 Play Special', 'Early Bird Tournament']
-              },
-              {
-                icon: <Target size={32} color="#F5A623" />, sport: 'Baseball', href: '/packages/baseball',
-                highlight: 'Monthly Membership — $450',
-                desc: 'Full month of MLB picks with deep statistical analysis for the entire month.',
-                plays: ['1 High Octane Play', '1 Week Membership', 'Monthly Membership', 'Season Membership']
-              },
-            ].map(pkg => (
-              <div key={pkg.sport} className="pricing-card">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <div style={{ background: 'rgba(245,166,35,0.1)', padding: '12px', borderRadius: '12px' }}>{pkg.icon}</div>
-                  <span className="badge badge-gold" style={{ fontSize: '13px' }}>{pkg.sport}</span>
-                </div>
+              { icon: <TrendingUp size={28} color="#F5A623" />, title: 'Proven Track Record', desc: '15+ years of consistent returns across NFL, NBA, MLB, and Horse Racing.' },
+              { icon: <Shield size={28} color="#F5A623" />, title: 'Data-Driven Analysis', desc: 'Every pick is built on deep statistical analysis — not gut feelings or hot takes.' },
+              { icon: <Zap size={28} color="#F5A623" />, title: 'Real-Time Delivery', desc: 'Picks delivered by SMS and email before games go live. You\'ll never miss a play.' },
+              { icon: <Smartphone size={28} color="#F5A623" />, title: 'Free SMS Service', desc: 'Text PICK to 51501 and get free picks delivered straight to your phone — no app needed.' },
+              { icon: <Activity size={28} color="#F5A623" />, title: 'Multiple Sports', desc: 'Football, basketball, baseball, and horse racing — all covered every single day.' },
+              { icon: <Target size={28} color="#F5A623" />, title: 'Tiers of Plays', desc: 'From entry-level to highest-confidence locks. Pick the package that matches your bankroll.' },
+            ].map(item => (
+              <div key={item.title} className="card" style={{ padding: '28px 24px', display: 'flex', gap: '18px', alignItems: 'flex-start' }}>
+                <div style={{ background: 'rgba(245,166,35,0.1)', padding: '12px', borderRadius: '10px', flexShrink: 0 }}>{item.icon}</div>
                 <div>
-                  <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '20px', fontWeight: 800, color: '#F5A623', marginBottom: '10px' }}>{pkg.highlight}</div>
-                  <p className="pricing-desc">{pkg.desc}</p>
+                  <h4 style={{ fontFamily: 'Outfit', fontWeight: 700, fontSize: '17px', marginBottom: '6px' }}>{item.title}</h4>
+                  <p style={{ color: '#9CA3AF', fontSize: '15px', lineHeight: 1.6 }}>{item.desc}</p>
                 </div>
-                <ul className="pricing-features">
-                  {pkg.plays.map(p => <li key={p}>{p}</li>)}
-                </ul>
-                <Link href={pkg.href} className="btn btn-primary btn-lg" style={{ marginTop: 'auto', fontSize: '17px' }}>
-                  View All {pkg.sport} Packages →
-                </Link>
               </div>
             ))}
           </div>
-
-          {/* Payment instructions box */}
-          <div style={{ marginTop: '40px', background: 'rgba(245,166,35,0.07)', border: '2px solid rgba(245,166,35,0.25)', borderRadius: '16px', padding: '32px', display: 'flex', alignItems: 'center', gap: '32px', flexWrap: 'wrap' }}>
-            <div style={{ background: 'rgba(245,166,35,0.15)', padding: '16px', borderRadius: '50%' }}><Banknote size={40} color="#F5A623" /></div>
-            <div style={{ flex: 1 }}>
-              <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '22px', marginBottom: '10px' }}>How to Pay — It's Easy</h3>
-              <p style={{ color: '#D1D5DB', fontSize: '17px', lineHeight: 1.7 }}>
-                Send your payment via Venmo to <strong style={{ color: '#F5A623' }}>@UncleharrysSports</strong>, then call or text
-                <strong style={{ color: '#F5A623' }}> 941-914-5885</strong> to confirm your order and get your picks started the same day.
-              </p>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <a href="tel:9419145885" className="btn btn-primary" style={{ fontSize: '17px', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '8px' }}><Phone size={18} /> Call 941-914-5885</a>
-              <a href="sms:51501&body=PICK" className="btn btn-outline" style={{ fontSize: '17px', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '8px' }}><Smartphone size={18} /> Text PICK to 51501</a>
-            </div>
+          <div style={{ marginTop: '40px', textAlign: 'center' }}>
+            <a href="sms:51501&body=PICK" className="btn btn-outline" style={{ fontSize: '17px', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '8px', margin: '0 auto', width: 'fit-content' }}><Smartphone size={18} /> Text PICK to 51501</a>
           </div>
         </div>
       </section>
@@ -415,7 +330,7 @@ export default function HomePage() {
               Get Free Picks <span className="text-gradient">By Text Message</span>
             </h2>
             <p style={{ color: '#D1D5DB', fontSize: '19px', lineHeight: 1.8, marginBottom: '36px' }}>
-              It's simple — just text the word <strong style={{ color: '#F5A623' }}>PICK</strong> to <strong style={{ color: '#F5A623' }}>51501</strong> and we'll
+              It&apos;s simple — just text the word <strong style={{ color: '#F5A623' }}>PICK</strong> to <strong style={{ color: '#F5A623' }}>51501</strong> and we&apos;ll
               start sending you free expert sports picks directly to your phone. No apps, no passwords.
               Just text and picks.
             </p>

@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
         ${body.split('\n').map((line: string) => `<p>${line}</p>`).join('')}
         <hr style="margin:24px 0;border-color:#eee;" />
         <p style="color:#999;font-size:12px;">
-          Harry's Picks | 941-914-5885 | <a href="https://harryspicks.com">harryspicks.com</a><br/>
+          Official Picks | 941-914-5885 | <a href="https://harryspicks.com">harryspicks.com</a><br/>
           For entertainment purposes only. 18+ only. All sales final.
         </p>
       </div>
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
             const batch = emails.slice(i, i + 10)
             await Promise.all(batch.map(email =>
                 resend.emails.send({
-                    from: `${process.env.FROM_NAME || "Harry's Picks"} <${process.env.FROM_EMAIL || 'picks@harryspicks.com'}>`,
+                    from: `${process.env.FROM_NAME || "Official Picks"} <${process.env.FROM_EMAIL || 'picks@harryspicks.com'}>`,
                     to: email,
                     subject,
                     html: htmlBody,

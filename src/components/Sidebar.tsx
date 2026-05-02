@@ -38,7 +38,7 @@ export default function Sidebar({ role, name }: SidebarProps) {
             <div className="sidebar-header">
                 <Link href="/" className="navbar-logo" style={{ fontSize: '18px' }}>
                     <div className="logo-icon" style={{ width: 32, height: 32 }}><Trophy size={16} color="#070B14" /></div>
-                    <span>Harry's <span className="text-gradient">Picks</span></span>
+                    <span>Official <span className="text-gradient">Picks</span></span>
                 </Link>
                 <div style={{ marginTop: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <span className="badge" style={{ background: `${roleColor}20`, color: roleColor, fontSize: '10px' }}>

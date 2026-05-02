@@ -28,9 +28,9 @@ export async function POST(req: NextRequest) {
         // Send welcome email via Resend
         const resend = new Resend(process.env.RESEND_API_KEY)
         await resend.emails.send({
-            from: `${process.env.FROM_NAME || "Harry's Picks"} <${process.env.FROM_EMAIL || 'picks@harryspicks.com'}>`,
+            from: `${process.env.FROM_NAME || "Official Picks"} <${process.env.FROM_EMAIL || 'picks@harryspicks.com'}>`,
             to: email,
-            subject: "🏆 Welcome to Harry's Picks — Your Free Picks Are Ready!",
+            subject: "🏆 Welcome to Official Picks — Your Free Picks Are Ready!",
             html: `
         <!DOCTYPE html>
         <html>
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
             <div style="background:linear-gradient(135deg,#111827,#0D1424);border-radius:16px;padding:40px;border:1px solid #1E2A3A;">
               <div style="text-align:center;margin-bottom:32px;">
                 <div style="width:60px;height:60px;background:linear-gradient(135deg,#F5A623,#D4841A);border-radius:14px;display:inline-flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px;">🏆</div>
-                <h1 style="color:#fff;font-size:28px;font-weight:800;margin:0 0 8px;">Welcome to Harry's Picks!</h1>
+                <h1 style="color:#fff;font-size:28px;font-weight:800;margin:0 0 8px;">Welcome to Official Picks!</h1>
                 <p style="color:#9CA3AF;font-size:16px;margin:0;">${full_name ? `Hey ${full_name}! You're` : "You're"} now part of 10,000+ winning members.</p>
               </div>
 
@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
               </div>
             </div>
             <div style="text-align:center;padding:24px 0;color:#4B5563;font-size:12px;">
-              <p>Harry's Picks | For entertainment purposes only. 18+ only.</p>
+              <p>Official Picks | For entertainment purposes only. 18+ only.</p>
               <a href="${process.env.NEXT_PUBLIC_APP_URL}/terms" style="color:#6B7280;text-decoration:none;">Terms</a> &middot;
               <a href="${process.env.NEXT_PUBLIC_APP_URL}/privacy" style="color:#6B7280;text-decoration:none;">Privacy</a>
             </div>

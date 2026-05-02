@@ -56,7 +56,18 @@ export default function Navbar() {
                             alignItems: 'center',
                             marginTop: '2px'
                         }}>
-                            Harry's <span className="text-gradient" style={{ marginLeft: '4px' }}>Picks</span>
+                        <span style={{
+                            fontFamily: 'Outfit, sans-serif',
+                            fontSize: '24px',
+                            fontWeight: 800,
+                            color: '#0A1128',
+                            whiteSpace: 'nowrap',
+                            display: 'flex',
+                            alignItems: 'center',
+                            marginTop: '2px'
+                        }}>
+                            Official <span className="text-gradient" style={{ marginLeft: '4px' }}>Picks</span>
+                        </span>
                         </span>
                     </Link>
 

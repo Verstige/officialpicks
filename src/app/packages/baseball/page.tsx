@@ -40,7 +40,7 @@ const BASEBALL_PACKAGES = [
         price: 100,
         period: 'play',
         featured: false,
-        desc: 'Our single highest-confidence MLB play. When Harry loves a game — this is it.',
+        desc: 'Our single highest-confidence MLB play. When Official Picks loves a game — this is it.',
         features: ['Single premium pick', 'Highest confidence rating', 'Full analysis included'],
     },
 ]

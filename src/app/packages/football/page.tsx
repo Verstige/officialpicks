@@ -53,7 +53,7 @@ const FOOTBALL_PACKAGES = [
         price: 20,
         period: 'day',
         featured: false,
-        desc: 'Daily Level 3 play — great entry-level pick for those getting started with Harry\'s system.',
+        desc: 'Daily Level 3 play — great entry-level pick for those getting started with the system.',
         features: ['Level 3 daily selection', 'Perfect entry-level pick', 'Budget-friendly'],
     },
     {

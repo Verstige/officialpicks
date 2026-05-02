@@ -49,7 +49,7 @@ export default function LoginPage() {
                             <Trophy size={26} />
                         </div>
                         <h1 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '28px', fontWeight: 800, marginBottom: '8px' }}>Sign In</h1>
-                        <p style={{ color: '#9CA3AF', fontSize: '15px' }}>Access your Harry's Picks account</p>
+                        <p style={{ color: '#9CA3AF', fontSize: '15px' }}>Access your Official Picks account</p>
                     </div>
 
                     <div className="card">
